@@ -8,6 +8,13 @@
   --color-muted: #666666;
   --color-primary: #0066cc;
   --color-text: #1a1a1a;
+  --color-white: #ffffff;
+
+  --color-bonfire-orange: #de977a;
+  --color-instagram-purple: #7638fa;
+  --color-facebook-blue: #1877f2;
+  --color-linkedin-blue: #0077b5;
+  --color-x-blue: #1D9BF0;
   --color-youtube-red: #db0036;
 
   /* Typography */
@@ -363,11 +370,6 @@ h1 span.error {
   padding: 0;
 }
 
-#socials a[target]:after {
-  background-image: none;
-  content: none;
-}
-
 @media (min-width: 768px) {
   #socials>ul {
     gap: 1.5rem;
@@ -375,10 +377,46 @@ h1 span.error {
 }
 
 @media (min-width: 1024px) {
-  #socials > ul {
+  #socials>ul {
     gap: 2.5rem;
   }
 }
+
+#socials a[target]:after {
+  background-image: none;
+  content: none;
+}
+
+#socials a.bonfire:hover,
+#socials a.bonfire:focus {
+  color: var(--color-bonfire-orange);
+}
+
+#socials a.facebook:hover,
+#socials a.facebook:focus {
+  color: var(--color-facebook-blue);
+}
+
+#socials a.instagram:hover,
+#socials a.instagram:focus {
+  color: var(--color-instagram-purple);
+}
+
+#socials a.linkedin:hover,
+#socials a.linkedin:focus {
+  color: var(--color-linkedin-blue);
+}
+
+#socials a.x:hover,
+#socials a.x:focus {
+  color: var(--color-x-blue);
+}
+
+#socials a.youtube:hover,
+#socials a.youttube:focus {
+  color: var(--color-youtube-red);
+}
+
 
 /* Page styles */
 #home h1 {
