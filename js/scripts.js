@@ -2,6 +2,7 @@
 const setup = () => {
   addConsoleWarning();
 };
+document.addEventListener("DOMContentLoaded", setup);
 
 /* Add a console warning */
 const addConsoleWarning = () => {
@@ -19,21 +20,18 @@ const reposition = () => {
   const aspectRatio = 16 / 9;
   const windowAspectRatio = windowWidth / windowHeight;
   const backgroundSize = (windowAspectRatio > aspectRatio) ? windowWidth + 'px auto' : 'auto ' + windowHeight + 'px';
-  const containers = document.getElementsByClassName('container');
+  const containers = document.getElementsByClassName('bg-container');
   for (const container of containers) {
     container.style.backgroundSize = backgroundSize;
   }
-  const images = document.getElementsByClassName('container');
+  const images = document.getElementsByClassName('bg-container');
   for (const image of images) {
     image.style.visibility = 'visible';
   }
-  const tmps = document.getElementsByClassName('tmp');
+  const tmps = document.getElementsByClassName('bg-tmp');
   for (const tmp of tmps) {
     tmp.classList.add('faded');
   }
 };
-
-/* DOM Events */
-document.addEventListener("DOMContentLoaded", setup);
 window.addEventListener("load", reposition);
 window.addEventListener("resize", reposition);
