@@ -326,10 +326,21 @@ h1 span.error {
   display: inline-block;
 }
 
-.tooltip-content {
+.tooltip-wrap a:hover + .tooltip-content,
+.tooltip-wrap a:focus + .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-wrap a[target]:after {
+  background-image: none;
+  content: none;
+}
+
+.tooltip-wrap .tooltip-content {
   visibility: hidden;
   position: absolute;
-  bottom: 130%;
+  bottom: calc(100% + 0.75rem);
   left: 50%;
   transform: translateX(-50%);
   padding: 0.5rem 0.75rem;
@@ -343,7 +354,7 @@ h1 span.error {
   transition: opacity 0.2s ease;
 }
 
-.tooltip-content::before {
+.tooltip-wrap .tooltip-content::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -352,12 +363,6 @@ h1 span.error {
   border-width: 0.5rem;
   border-style: solid;
   border-color: var(--color-bg) transparent transparent transparent;
-}
-
-.tooltip-wrap a:hover + .tooltip-content,
-.tooltip-wrap a:focus + .tooltip-content {
-  visibility: visible;
-  opacity: 1;
 }
 
 /* Social Links */
@@ -380,11 +385,6 @@ h1 span.error {
   #socials>ul {
     gap: 2.5rem;
   }
-}
-
-#socials a[target]:after {
-  background-image: none;
-  content: none;
 }
 
 #socials a.bonfire:hover,
@@ -416,7 +416,6 @@ h1 span.error {
 #socials a.youttube:focus {
   color: var(--color-youtube-red);
 }
-
 
 /* Page styles */
 #home h1 {
