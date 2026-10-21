@@ -17,17 +17,26 @@
   --color-x-blue: #1D9BF0;
   --color-youtube-red: #db0036;
 
+  /* Modular Scale */
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+
   /* Typography */
   --font-serif: "Playfair Display", serif;
   --font-sans: "Montserrat", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --line-height-base: 1.5;
-  --line-height-heading: 1.2;
-
-  /* Spacing */
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
+  --line-height-base: var(--ratio);
+  --line-height-heading: 1em;
 
   /* Specialty */
   --panel-box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.35);
@@ -110,7 +119,7 @@ picture,
 svg,
 video,
 canvas {
-  max-width: 100%;
+  max-inline-size: 100%;
   height: auto;
   display: block;
 }
@@ -123,7 +132,7 @@ select {
 }
 
 small {
-  font-size: 80%;
+  font-size: 0.8em;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -200,12 +209,12 @@ a[target]:after {
 /* Buttons */
 .btn {
   border: 1px solid var(--color-link);
-  border-radius: 3rem;
+  border-radius: 3em;
   color: var(--color-link);
   display: inline-block;
   line-height: 1;
   margin: 0 auto;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75em 1.5em;
   text-decoration: none;
   transition: 0.25s ease-in-out;
   -moz-transition: 0.25s ease-in-out;
@@ -238,13 +247,13 @@ main {
   flex-grow: 1;
   gap: 1.5rem;
   justify-content: center;
-  padding: 1.5rem;
+  padding: var(--s0);
   z-index: 4;
 }
 
 @media (min-width: 768px) {
   main {
-    padding: 3rem;
+    padding: var(--s3);
   }
 }
 
@@ -254,16 +263,32 @@ footer {
 
 /* Typography */
 h1 {
-  font-size: 3rem;
+  font-size: var(--s3);
 }
 
 h1 span.error {
   display: block;
   font-family: var(--font-sans);
-  font-size: 35%;
+  font-size: var(--s0);
   font-weight: 200;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: var(--s2);
+}
+
+h3 {
+  font-size: var(--s1);
+}
+
+h4 {
+  font-size: var(--s0);
+}
+
+h5 {
+  font-size: var(--s-1);
 }
 
 /*  Background images */
@@ -399,7 +424,7 @@ h1 span.error {
 /* Affiliates */
 #affiliates a.oswa img {
   background-color: var(--color-white);
-  border-radius: var(--space-md);
+  border-radius: var(--s0);
   padding: 5px;
 }
 
