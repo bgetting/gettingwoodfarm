@@ -366,27 +366,6 @@ h1 span.error {
 }
 
 /* Social Links */
-#socials > ul {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@media (min-width: 768px) {
-  #socials>ul {
-    gap: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  #socials>ul {
-    gap: 2.5rem;
-  }
-}
-
 #socials a.bonfire:hover,
 #socials a.bonfire:focus {
   color: var(--color-bonfire-orange);
@@ -417,6 +396,19 @@ h1 span.error {
   color: var(--color-youtube-red);
 }
 
+/* Affiliates */
+#affiliates a.oswa img {
+  background-color: var(--color-white);
+  border-radius: var(--space-md);
+  padding: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  #affiliates a.oswa img {
+    background-color: unset;
+  }
+}
+
 /* Page styles */
 #home h1 {
   aspect-ratio: 79 /95;
@@ -432,6 +424,27 @@ h1 span.error {
 @media (min-width: 768px) {
   #home h1 {
     width: 300px;
+  }
+}
+
+ul.list-inline {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  ul.list-inline {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  ul.list-inline {
+    gap: 2.5rem;
   }
 }
 
